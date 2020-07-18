@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem 2rem 1rem 2rem;
+    background: lightgray;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+}
+
+h3 {
+    padding: 1rem;
+}
+
+table {
+    border: black;
+    border-style: solid;
+    border-width: 0.2px;
+    padding: 0.8rem;
+}
