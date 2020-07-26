@@ -30,6 +30,7 @@ function createCard(teamName, teamId, playerId, playerNumber, playerPosition) {
     backCard.appendChild(h3)
     // Create the Table of the card
     const table = document.createElement('table');
+   
     // Creating the header of the Table
     const thead = document.createElement('thead');
     let th = document.createElement('th');
@@ -38,7 +39,7 @@ function createCard(teamName, teamId, playerId, playerNumber, playerPosition) {
     th.appendChild(thText);
     row.appendChild(th);
     th = document.createElement('th');
-    thText = document.createTextNode('Number');
+    thText = document.createTextNode('#');
     th.appendChild(thText);
     row.appendChild(th);
     th = document.createElement('th');
@@ -100,7 +101,7 @@ async function getTeamRosterData(id) {
         rosterData.forEach(player => {
             // getPlayerData(player.person.id);
             card +="<tr>";
-            card += `<td><a href="https://statsapi.web.nhl.com/api/v1/people/${player.person.id}/stats?stats=gameLog&season=20192020">${player.person.fullName}</a></td>`;
+            card += `<td class='player-name'><a href="https://statsapi.web.nhl.com/api/v1/people/${player.person.id}/stats?stats=gameLog&season=20192020">${player.person.fullName}</a></td>`;
             // card += `<td><button type="button" class="collapsible">${player.person.fullName}</button></td>`;
             card += `<td>${player.jerseyNumber}</td>`;
             card += `<td>${player.position.name}</td></tr>`

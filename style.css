@@ -9,7 +9,7 @@ body {
     margin: 1rem 2rem 1rem 2rem;
     background-color: #ECECEC;
     height: 100vh;
-    text-align: center;
+    text-align: center;   
 }
 
 .container {
@@ -19,41 +19,43 @@ body {
     flex-wrap: wrap;
 }
 
-/* .card {
-    margin: 1rem;
-    padding: 1rem;
-    height: 40vh;
-    width: 20vw;
-    align-self: flex-start;
-    background-color: #cecece;
-    transition: all .1s ease; 
-    overflow: auto;
-} */
-
 h3 {
+    flex: 1;
     padding: 1rem ;
     font-size: large;
 }
 
-/* th {
-    padding: 0.5px;
-} */
+
 
 table {
     border: black;
     border-style: solid;
     border-width: 0.2px;
     padding: 0.8rem;
-    width: 18vw;
     text-align: left;
-    margin: auto;
-    
 }
 
 
+th {
+  padding: 1px;
+  text-align: center;
+}
+
+td {
+  border: 0.1px solid gray;
+  text-align: center;
+}
+
+.player-name {
+  text-align: left;
+  white-space: nowrap;
+}
+
 img {
-    height: 100%;
-    width: 85%;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     margin: auto;
     padding: 1vh;
 }
@@ -65,22 +67,25 @@ img {
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     margin: 1rem;
     /* padding: 1rem; */
+    max-height: 100%;
+    
     height: 40vh;
     width: 20vw;
-    align-self: flex-start;
     transition: all .1s ease; 
   }
   
   /* This container is needed to position the front and back side */
   .card-inner {
     position: relative;
-    height: 40vh;
-    width: 100%;
+    max-width: 100%;
+    max-height: 40vh;
+    /* height: 40vh;
+    width: 100%; */
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     /* overflow: scroll; */
   }
   
@@ -92,6 +97,8 @@ img {
   /* Position the front and back side */
   .card-front, .card-back {
     position: absolute;
+    /* max-width: 100%;
+    max-height: 100%; */
     /* height: 100%; */
     /* width: 100%; */
     -webkit-backface-visibility: hidden; /* Safari */
@@ -101,21 +108,39 @@ img {
   /* Style the front side (fallback if image is missing) */
   .card-front {
     /* background-color: #bbb; */
-    background-color: red;
+    background-color: white;
     color: black;
+    border: 0.5em solid gray;
+    max-width: 100%;
+    width: 20vw;
+    max-height: 40vh;
+    height: 40vh;
+    display: flex;
+
 
   }
   
   /* Style the back side */
   .card-back {
+    max-height: 40vh;
     height: 40vh;
+    max-width: 20vw;
     width: 20vw;
     background-color: #cecece;
     color: white;
     transform: rotateY(180deg);
     overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
   }
 
+
+  @media only screen and (max-width: 1000px) {
+    body {
+      background-color: lightblue;
+    }
+
+  }
 
 
 /* Custom Scroll Bar */
