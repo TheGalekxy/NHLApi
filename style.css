@@ -33,6 +33,7 @@ table {
     border-width: 0.2px;
     padding: 0.8rem;
     text-align: left;
+    align-self: center;
 }
 
 
